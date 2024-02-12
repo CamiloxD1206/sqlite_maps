@@ -41,8 +41,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val location = LatLng(latitud, longitud)
 
-        val cordenadas = coordenadas(latitud, longitud, title)
-        dbManager.insertLocationData(cordenadas)
+        binding.btnMaps.setOnClickListener {
+            val cordenadas = coordenadas(latitud, longitud, title)
+            dbManager.insertLocationData(cordenadas)
+        }
+
 
 
         mMap.addMarker(MarkerOptions().position(location).title(title))
