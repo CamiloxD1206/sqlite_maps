@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/navigation_home"
+        android:icon="@drawable/senaicon"
+        android:title="Sena" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
         android:icon="@drawable/mountain"
         android:title="Morro" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_notifications"
         android:icon="@drawable/tree"
         android:title="Caldas" />
-
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/senaicon"
-        android:title="Sena" />
 
 </menu>

@@ -1,5 +1,6 @@
 package com.example.popayan.ui.notifications
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.popayan.MapsActivity
 import com.example.popayan.R
 import com.example.popayan.databinding.FragmentNotificationsBinding
 
@@ -34,6 +36,14 @@ class NotificationsFragment : Fragment() {
             textView.text = it
         }
 
+        binding.btnCaldas.setOnClickListener{
+            val intent = Intent(requireContext(), MapsActivity::class.java)
+            intent.putExtra("latitud",   2.442081779393574)
+            intent.putExtra("longitud", -76.60625244778097)
+            intent.putExtra("title","Parque Caldas")
+            startActivity(intent)
+        }
+
 
         mediaPlayer = MediaPlayer.create(requireContext(), R.raw.blink)
         mediaPlayer.start()
@@ -45,7 +55,7 @@ class NotificationsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
 
-        // Liberar recursos del MediaPlayer cuando el fragmento es destruido
+
         mediaPlayer.release()
     }
 }

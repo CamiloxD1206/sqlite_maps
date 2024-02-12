@@ -1,5 +1,6 @@
 package com.example.popayan.ui.dashboard
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.popayan.MapsActivity
 import com.example.popayan.R
 import com.example.popayan.databinding.FragmentDashboardBinding
 
@@ -34,6 +36,13 @@ class DashboardFragment : Fragment() {
             textView.text = it
         }
 
+        binding.btnMorro.setOnClickListener{
+            val intent = Intent(requireContext(), MapsActivity::class.java)
+            intent.putExtra("latitud",   2.4448618598754495)
+            intent.putExtra("longitud", -76.60014736312085)
+            intent.putExtra("title","Morro de Tulcan")
+            startActivity(intent)
+        }
 
         mediaPlayer = MediaPlayer.create(requireContext(), R.raw.lost)
         mediaPlayer.start()

@@ -1,5 +1,6 @@
 package com.example.popayan.ui.home
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.popayan.MapsActivity
 import com.example.popayan.R
 import com.example.popayan.databinding.FragmentHomeBinding
 
@@ -34,7 +36,15 @@ class HomeFragment : Fragment() {
             textView.text = it
         }
 
-        // Inicializar el MediaPlayer con la canción deseada
+        binding.btnSena.setOnClickListener{
+            val intent = Intent(requireContext(), MapsActivity::class.java)
+            intent.putExtra("latitud",    2.4834960102086443)
+            intent.putExtra("longitud", -76.56174047661578)
+            intent.putExtra("title","Centro de Teleinformatica y Produccion Industrial")
+            startActivity(intent)
+        }
+
+
         mediaPlayer = MediaPlayer.create(requireContext(), R.raw.nublado)
         mediaPlayer.start()
 

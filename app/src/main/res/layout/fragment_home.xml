@@ -36,12 +36,13 @@
 
             />
         <Button
+            android:id="@+id/btnSena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
             android:layout_margin="10dp"
-            android:text="Guardar"/>
+            android:text="Ubicacion"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
